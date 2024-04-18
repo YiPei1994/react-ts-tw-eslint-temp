@@ -1,88 +1,42 @@
-Init project with Vite
-npm init vite@latest vite-react -- --template react-ts
-cd vite-react
-npm install
-Quick Install
-mkdir .vscode
-curl -o .vscode/extensions.json https://gist.githubusercontent.com/vdelacou/4584ed57e1f141290820ba389694d7dd/raw/.vscode_extensions.json
-curl -o .vscode/settings.json https://gist.githubusercontent.com/vdelacou/4584ed57e1f141290820ba389694d7dd/raw/.vscode_settings.json
 
-curl -o tsconfig.json https://gist.githubusercontent.com/vdelacou/4584ed57e1f141290820ba389694d7dd/raw/tsconfig.json
+# React TypeScript TailwindCSS ESLint Template
 
-npm install @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-airbnb eslint-import-resolver-typescript eslint-plugin-etc eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-unicorn eslint-plugin-tailwindcss --save-dev
+This template provides a quick setup for a React project using TypeScript, TailwindCSS, and ESLint. It includes additional dependencies for enhanced functionality.
 
-curl -o .eslintignore https://gist.githubusercontent.com/vdelacou/4584ed57e1f141290820ba389694d7dd/raw/.eslintignore
-curl -o .eslintrc.json https://gist.githubusercontent.com/vdelacou/4584ed57e1f141290820ba389694d7dd/raw/.eslintrc.json
-npm pkg set scripts.lint="eslint . --ext .js,.jsx,.ts,.tsx"
-npm pkg set scripts.format="eslint . --ext .js,.jsx,.ts,.tsx --fix"
+## Getting Started
 
-npm install vitest c8 --save-dev
-curl -o vite.config.ts https://gist.githubusercontent.com/vdelacou/4584ed57e1f141290820ba389694d7dd/raw/vite.config.ts
-npm pkg set scripts.test="vitest run"
-npm pkg set scripts.watch="vitest watch"
-npm pkg set scripts.coverage="vitest run --coverage"
-curl -o ./src/example.test.ts https://gist.githubusercontent.com/vdelacou/4584ed57e1f141290820ba389694d7dd/raw/example.test.ts
+1. Clone this repository:
+   ```bash
+   git clone <repo-url>
+   ```
 
-npm install husky --save-dev
-npm pkg set scripts.prepare="husky install"
-git init
-npm run prepare
-npx husky add .husky/pre-commit "npm run lint && npm run test"
-npx husky add .husky/pre-push "npm run lint && npm run test && npm run build"
-npm pkg delete scripts.prepare
+2. Remove the existing Git configuration and rename the folder to your project name:
+   ```bash
+   # Remove existing Git configuration
+   rm -rf .git
+   
+   # Rename folder to 'project' or your desired project name
+   mv react-typescript-tailwindcss-eslint project
+   ```
 
-rm ./src/logo.svg
-rm ./src/App.css
-rm ./src/App.tsx
-rm ./src/index.css
-curl -o ./src/app.tsx https://gist.githubusercontent.com/vdelacou/4584ed57e1f141290820ba389694d7dd/raw/app.tsx
-curl -o ./src/main.tsx https://gist.githubusercontent.com/vdelacou/4584ed57e1f141290820ba389694d7dd/raw/main.tsx
+3. Navigate into the project directory:
+   ```bash
+   cd project
+   ```
 
-npm pkg set scripts.update-dependencies="npx -y npm-check-updates -u"
-npm run update-dependencies
-npm install
+4. Open the project in your preferred IDE and install all dependencies:
 
-npm run format
+   ```bash
+   # Install dependencies using npm
+   npm install
+   
+   # or using yarn
+   yarn install
+   ```
 
-echo .dccache >> .gitignore
-git add .
-git commit -m "init project"
+## Additional Dependencies
 
-// snippets
-{
-"Typescript React Function Component": [{
-"prefix": "rfc",
-"body": [
+- **clsx**: A utility for constructing className strings conditionally.
+- **framer-motion**: A library for creating smooth animations in React.
+- **tailwind-merge**: A tool to merge TailwindCSS classes for a more professional appearance.
 
-    		"type ${TM_FILENAME_BASE}Props = {",
-    		"  $1",
-    		"}",
-    		"",
-    		"const $TM_FILENAME_BASE = ({$2}:${TM_FILENAME_BASE}Props) => {",
-    		"  return <div>$TM_FILENAME_BASE</div>",
-    		"}",
-    		"",
-    		"export default $TM_FILENAME_BASE"
-    	],
-    	"description": "Typescript React Function Component"
-    	 },
-    	 {
-    		"prefix": "irfc",
-    		"body": [
-    			"import { FC } from 'react'",
-    			"",
-    			"interface ${TM_FILENAME_BASE}Props {",
-    			"  $1",
-    			"}",
-    			"",
-    			"const $TM_FILENAME_BASE: FC<${TM_FILENAME_BASE}Props> = ({$2}) => {",
-    			"  return <div>$TM_FILENAME_BASE</div>",
-    			"}",
-    			"",
-    			"export default $TM_FILENAME_BASE"
-    		],
-    		"description": "Typescript React Function Component"
-    		 },
-    	]
-
-}
