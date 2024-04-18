@@ -1,3 +1,68 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    background-color: white;
+    color: black;
+    border: #cac6da;
+  }
+  html {
+    scroll-behavior: smooth;
+    line-height: 1.5em;
+  }
+  h1 {
+    font-size: 48px;
+  }
+  h2 {
+    font-size: 43px;
+  }
+  h3 {
+    font-size: 32px;
+  }
+  h4 {
+    font-size: 27px;
+  }
+  p,
+  a,
+  input,
+  select,
+  button {
+    font-size: 14px;
+  }
+  @media (min-width: 1024px) {
+    p,
+    a,
+    input,
+    select,
+    button {
+      font-size: 16px;
+    }
+  }
+  @media (min-width: 1820px) {
+    p,
+    a,
+    input,
+    select,
+    button {
+      font-size: 18px;
+    }
+  }
+
+  .bg-darkprimary {
+    background-color: #2a254b;
+  }
+  .bg-primary {
+    background-color: #4e4d93;
+  }
+  .text-darkprimary {
+    color: #2a254b;
+  }
+  .text-primary {
+    color: #4e4d93;
+  }
+  .bg-side {
+    background-color: #f9f9f9;
+  }
+}
